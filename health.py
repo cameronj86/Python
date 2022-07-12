@@ -1,9 +1,9 @@
 import random
-
 health = 50
-newhealth = potionHealth + health
+difficulty = 1
+maxhealth = 100 - health
+potionHealth = random.randint(25,maxhealth)/difficulty
+health = int(potionHealth) + health
 
 
-potionHealth = random.randint(25,50)
-print(potionHealth)
 print(health)
