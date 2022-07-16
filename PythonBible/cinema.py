@@ -22,13 +22,14 @@ while True:
         else: 
             elig = False
             print("I'm sorry fam but you're too young to see this movie")
+            break
     if elig:
         tixNum = int(input("How many tickets do you need fam?: ").strip())
-        while tixNum > Films[filmChoice]["Seats Available"]:
-            if  tixNum <= Films[filmChoice]["Seats Available"]:
-                print("Yes, here are {} tickets for the next showing of {}. Enjoy the show!".format(tixNum,filmChoice))
-            else: 
-                print("Sorry fam, we don't have that many left. Try again") 
-                break
+        while tixNum <= Films[filmChoice]["Seats Available"]:
+            print("Yes, here are {} tickets for the next showing of {}. Enjoy the show!".format(tixNum,filmChoice))
+            break
+        # print("Sorry fam, we don't have that many tickets left. Try again") 
+        else:
+            print("Sorry we don't have that many tickets for {}. Try another show and I will help the next guest".format(filmChoice))
+            continue
     else: print("I'm sorry but we aren't showing {} here unfortunately. Try another film!".format(filmChoice))
-
